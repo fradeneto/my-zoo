@@ -1,0 +1,14 @@
+node_modules
+.vscode
+coverage
+public
+dist
+*.scss
+*.json
+.eslintrc.js
+webpack.common.js
+webpack.dev.js
+webpack.prod.js
+jest.config.js
+src/components/flexy/
+./server.js

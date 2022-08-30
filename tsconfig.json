@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "es6",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "rootDirs": ["src", "tests"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "@/tests/*": ["../tests/*"]
+    },
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "strict": false,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true
+  },
+  "include": [
+    "./src/**/*",
+    "./tests/**/*",
+    "./server.js"
+  ],
+  "exclude": ["tests/e2e/cypress", "server", "node_modules"]
+}
