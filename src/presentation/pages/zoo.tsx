@@ -1,21 +1,13 @@
 import React, { useState } from 'react';
 import { clone } from 'lodash';
 import { MyZoo } from '@/entities/MyZoo';
-import { Animal } from '@/entities/animals/Aminal';
-import { Elephant } from '@/entities/animals/Elephant';
-import { Monkey } from '@/entities/animals/Monkey';
-import { Giraffe } from '@/entities/animals/Giraffe';
+import { animalFactory } from '@/entities/animals/AnimalFactory';
 
-const animals: Animal[] = [];
-for (let index = 0; index < 5; index += 1) {
-  animals.push(new Elephant());
-}
-for (let index = 0; index < 5; index += 1) {
-  animals.push(new Monkey());
-}
-for (let index = 0; index < 5; index += 1) {
-  animals.push(new Giraffe());
-}
+const animals = [
+  ...animalFactory.newElephants({ quantity: 5 }),
+  ...animalFactory.newGiraffes({ quantity: 5 }),
+  ...animalFactory.newMonkeys({ quantity: 5 }),
+];
 
 export const Zoo: React.FC   = () => {
   const [zoo, setZoo] = useState<MyZoo>(new MyZoo({ animals }));
